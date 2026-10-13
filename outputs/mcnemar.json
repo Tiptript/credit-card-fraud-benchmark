@@ -1,0 +1,7 @@
+{
+  "config_a": "Hist Gradient Boosting | class_weight",
+  "config_b": "Logistic Regression | class_weight",
+  "only_a_errs": 92,
+  "only_b_errs": 11,
+  "p_value": 0.0
+}

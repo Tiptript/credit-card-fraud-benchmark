@@ -1,0 +1,37 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Large Datasets (Fetch from Kaggle)
+creditcard.csv
+*.csv
+*.zip
+*.tar.gz
+*.parquet
+data/*.csv
+data/*.zip
+
+# Keep benchmark output CSVs
+!outputs/*.csv
+
+# Virtual Environments
+venv/
+env/
+ENV/
+.venv/
+
+# Jupyter Notebook Checkpoints
+.ipynb_checkpoints/
+
+# IDE & OS files
+.vscode/
+.idea/
+*.swp
+*~
+.DS_Store
+Thumbs.db
+
+# Logs and scratch files
+*.log
+scratch/

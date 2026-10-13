@@ -1,0 +1,10 @@
+config,cost_fp,threshold,cost_test
+Hist Gradient Boosting | class_weight,2.0,0.239,2533.94
+Hist Gradient Boosting | class_weight,10.0,0.7093,3130.26
+Hist Gradient Boosting | class_weight,50.0,0.7093,5170.26
+Logistic Regression | class_weight,2.0,0.9985,2420.4
+Logistic Regression | class_weight,10.0,0.9985,2612.4
+Logistic Regression | class_weight,50.0,0.9985,3572.4
+Logistic Regression | smote,2.0,0.9986,2436.4
+Logistic Regression | smote,10.0,0.9986,2692.4
+Logistic Regression | smote,50.0,0.9986,3972.4
