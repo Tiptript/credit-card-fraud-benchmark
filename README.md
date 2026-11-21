@@ -24,8 +24,19 @@ Detecting credit card fraud is a classic extreme class imbalance problem: in the
 Most public repositories evaluate this dataset naively: shuffling data across time, reporting deceptive `ROC-AUC > 0.99`, tuning decision thresholds directly on the test set, and applying SMOTE blindly.
 
 This repository documents the evolution of this project across two distinct phases:
-1. **Version 1.0 (2025 Monograph / Undergraduate Thesis):** The original academic investigation exploring classical classifiers (Logistic Regression, LinearSVM, Decision Trees) and F1-score maximization.
+1. **Version 1.0 (2025 Monograph / Undergraduate Thesis & Scientific Article):** The original academic investigation exploring classical classifiers (Logistic Regression, LinearSVM, Decision Trees, Naive Bayes), F1-score maximization, and Transaction Cost Economics.
 2. **Version 2.1 (Production-Grade State-of-the-Art Benchmark):** A complete methodological overhaul correcting **10 foundational methodological flaws**, introducing **out-of-time chronological validation**, **ablation studies**, **Platt probability calibration**, **example-dependent economic cost minimization in R$**, **multi-seed algorithmic variance**, **stratified bootstrap confidence intervals**, **paired McNemar significance tests**, **XGBoost tuning**, **unsupervised anomaly detection**, and **SHAP explainability**.
+
+---
+
+## 📚 Version 1.0 Academic Publications (Monograph & Article)
+
+The original Version 1.0 research comprises two peer-reviewed publications in *Revista Científica ACERTTE* (ISSN 2763-8928), preserved in full inside [`docs/v1_referencias/`](docs/v1_referencias/):
+
+| Work | Role in Project | Publication & DOI | Repository Files |
+| :--- | :--- | :--- | :--- |
+| **Undergraduate Monograph (TCC)**<br>*Métodos de Machine Learning na Detecção de Fraude em Cartão de Crédito: Um Estudo Comparado* | **Empirical Baseline (v1.0):** UNIFESP/EPPEN thesis (approved July 25, 2025) comparing Logistic Regression, LinearSVC, Decision Tree, and Gaussian NB on the ULB/Kaggle dataset (`284,807` tx). | *ACERTTE*, v. 5, n. 9, `e59265` (2025)<br>DOI: [`10.63026/acertte.v5i9.265`](https://doi.org/10.63026/acertte.v5i9.265)<br>[View on Acertte](https://www.acertte.org/acertte/pt_BR/article/view/265/213) | [`Monografia PDF (Acertte)`](docs/v1_referencias/Monografia_TCC_2025_Acertte_v5n9_e59265.pdf)<br>[`Monografia DOCX`](docs/Vinicius_Dias_Oliveira_Monografia_2025.docx)<br>[`Notebook v1.0`](notebooks/01_fraud_detection_monograph_v1.ipynb) |
+| **Scientific Article**<br>*Fraude em Cartões de Crédito e Custos de Transação: O Papel do Machine Learning na Eficiência Econômica* | **Economic & Institutional Bridge:** Frames credit card fraud and ML detection through **Transaction Cost Theory** (Coase, 1937; Williamson, 1985, 1996) and **Schumpeterian Innovation** (1942), directly motivating v2.1's cost-sensitive loss in R$. | *ACERTTE*, v. 5, n. 11, `e511275` (Nov/2025)<br>DOI: [`10.63026/acertte.v5i11.275`](https://doi.org/10.63026/acertte.v5i11.275)<br>[View on Acertte](https://acertte.org/acertte/pt_BR/article/view/275/232) | [`Artigo PDF (Acertte)`](docs/v1_referencias/Artigo_2025_Fraude_Custos_Transacao_Acertte_v5n11_e511275.pdf)<br>[`v1 References Index`](docs/v1_referencias/README.md) |
 
 ---
 
@@ -124,8 +135,12 @@ Evaluated on the **strictly chronologically held-out test partition** (42,722 tr
 │   └── 02_fraud_detection_state_of_art_v2_1.ipynb # Fully commented v2.1 pedagogical notebook
 │
 ├── docs/
-│   ├── guia_metodologico_v2_1.md       # Comprehensive 15-chapter study guide (Portuguese)
-│   └── Vinicius_Dias_Oliveira_Monografia_2025.docx # Original academic monograph document
+│   ├── guia_metodologico_v2_1.md                      # Comprehensive 15-chapter study guide (Portuguese)
+│   ├── Vinicius_Dias_Oliveira_Monografia_2025.docx    # Original academic monograph Word document
+│   └── v1_referencias/                                # Official v1.0 published PDFs & citations (ACERTTE)
+│       ├── README.md                                  # Bibliographic index, ABNT/BibTeX & v1->v2 bridge
+│       ├── Monografia_TCC_2025_Acertte_v5n9_e59265.pdf # Published Monograph / TCC (DOI: 10.63026/acertte.v5i9.265)
+│       └── Artigo_2025_Fraude_Custos_Transacao_Acertte_v5n11_e511275.pdf # Published Article (DOI: 10.63026/acertte.v5i11.275)
 │
 ├── outputs/                            # Precomputed experimental artifacts
 │   ├── calibration_test.png            # Calibration curve (Reliability diagram)
@@ -146,7 +161,7 @@ Evaluated on the **strictly chronologically held-out test partition** (42,722 tr
 
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/<your-username>/credit-card-fraud-benchmark.git
+git clone https://github.com/Tiptript/credit-card-fraud-benchmark.git
 cd credit-card-fraud-benchmark
 ```
 
